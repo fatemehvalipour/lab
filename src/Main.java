@@ -8,6 +8,9 @@ public class Main {
         int m = scan.nextInt();//tool
         int n = scan.nextInt();//arz
         int numOfPolice = scan.nextInt();
+        int firstXThief = rand.nextInt(m);
+        int firstYThief = rand.nextInt(n);
+        Thief thief = new Thief(firstXThief,firstYThief);
 
     }
 }
