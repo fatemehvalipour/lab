@@ -13,5 +13,11 @@ public class Ground {
             }
         }
     }
+    public void setPlace(int x,int y,String kind){
+        ground[x][y] = kind;
+    }
 
+    public String[][] getGround() {
+        return ground;
+    }
 }
