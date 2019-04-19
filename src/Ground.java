@@ -37,4 +37,9 @@ public class Ground {
         }
         System.out.println();
     }
+   public void move(int x,int y,int nextX,int nextY){
+        ground[nextX][nextY] = "D";
+        ground[x][y] = "-";
+
+   }
 }
