@@ -14,12 +14,17 @@ public class Main {
         Thief thief = new Thief(firstXThief,firstYThief);
         ground.setPlace(firstXThief,firstYThief,"D");
         for(int i = 0 ;i < numOfPolice ;i++){
-            int xP = rand.nextInt();
-            int yP = rand.nextInt();
+            int xP = rand.nextInt(m);
+            int yP = rand.nextInt(n);
             if(ground.getGround()[xP][yP].equals("-")){
-
+                Police police = new Police(xP,yP);
+                ground.setPlace(xP,yP,"P");
+            }else {
+                i--;
+                continue;
             }
         }
-
+        ground.print();
+        
     }
 }

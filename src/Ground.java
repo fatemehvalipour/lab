@@ -20,4 +20,21 @@ public class Ground {
     public String[][] getGround() {
         return ground;
     }
+    public void print(){
+        for(int i= 0 ; i < n;i++){
+            for(int k = 0 ; k < (2*m)+1 ;k++){
+                System.out.print("_");
+            }
+            System.out.println();
+            for (int j = 0; j < m ; j++){
+                System.out.print("|" + ground[j][i]);
+                //ground[j][i] = "-";
+            }
+            System.out.println("|");
+        }
+        for(int k = 0 ; k < (2*m)+1 ;k++){
+            System.out.print("_");
+        }
+        System.out.println();
+    }
 }
