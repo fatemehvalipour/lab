@@ -7,9 +7,9 @@ public class Thief {
     private int nGround;
     private int nextX;
     private int nextY;
-    private int previousX;
-    private int previousY;
-    Ground ground = new Ground(mGround,nGround);
+    //private int previousX;
+    //private int previousY;
+    //Ground ground = new Ground(mGround,nGround);
     Random rand = new Random();
     public Thief(int x, int y,int m,int n) {
         X = x;
@@ -34,6 +34,11 @@ public class Thief {
         return nextY;
     }
 
+    public void setXY(int x,int y) {
+        X = x;
+        Y = y;
+    }
+
     public void moveThief(){
         while (true) {
             int randX = rand.nextInt(3);
@@ -47,6 +52,7 @@ public class Thief {
                     nextY = Y - 1;
                     break;
                 }
+                continue;
             }
             if(randX == 2 && randY == 2){
                 if(X + 1 < mGround && Y + 1 < nGround){
@@ -54,6 +60,7 @@ public class Thief {
                     nextY = Y + 1;
                     break;
                 }
+                continue;
             }
             if(randX == 0 && randY == 1){
                 if(X - 1 >= 0 ){
@@ -61,6 +68,7 @@ public class Thief {
                     nextY = Y;
                     break;
                 }
+                continue;
             }
             if(randX == 0 && randY == 2){
                 if(X - 1 >= 0 && Y + 1 < nGround){
@@ -68,6 +76,7 @@ public class Thief {
                     nextY = Y + 1;
                     break;
                 }
+                continue;
             }
             if(randX == 1 && randY == 2){
                 if(Y + 1 < nGround){
@@ -75,6 +84,7 @@ public class Thief {
                     nextY = Y + 1;
                     break;
                 }
+                continue;
             }
             if(randX == 1 && randY == 0){
                 if(Y - 1 >= 0){
@@ -82,7 +92,7 @@ public class Thief {
                     nextY = Y - 1;
                     break;
                 }
-
+                continue;
             }
             if(randX == 2 && randY == 0){
                 if(X + 1 < mGround && Y - 1 >= 0){
@@ -90,6 +100,7 @@ public class Thief {
                     nextY = Y - 1;
                     break;
                 }
+                continue;
             }
             if(randX == 2 && randY == 1){
                 if(X + 1 < mGround ){
@@ -97,6 +108,7 @@ public class Thief {
                     nextY = Y;
                     break;
                 }
+                continue;
             }
         }
 
